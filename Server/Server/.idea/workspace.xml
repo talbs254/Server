@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f4c5d75-35a7-4a97-8b76-d8738774a55f" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>secretOrPrivateKey</find>
+      <find>INSER</find>
+      <find>username</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/DButils.js" />
+        <option value="$PROJECT_DIR$/moduels/User.js" />
+        <option value="$PROJECT_DIR$/node_modules/User.js" />
+        <option value="$PROJECT_DIR$/users.js" />
+        <option value="$PROJECT_DIR$/routes/general.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/‏‏server.js" />
+        <option value="$PROJECT_DIR$/routes/poi.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="960" />
+    <option name="height" value="1100" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\אלי\Desktop\3.2\routes" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.‏‏server.js">
+    <configuration name="DButils.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="C:/Program Files/nodejs/node" nameIsGenerated="true" path-to-js-file="DButils.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="‏‏server.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="C:/Program Files/nodejs/node" nameIsGenerated="true" path-to-js-file="‏‏server.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="users.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/routes/users.js" working-dir="$PROJECT_DIR$" />
+    <list>
+      <item itemvalue="Node.js.‏‏server.js" />
+      <item itemvalue="Node.js.DButils.js" />
+      <item itemvalue="Node.js.users.js" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.‏‏server.js" />
+        <item itemvalue="Node.js.users.js" />
+        <item itemvalue="Node.js.DButils.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f4c5d75-35a7-4a97-8b76-d8738774a55f" name="Default" comment="" />
+      <created>1527231161242</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527231161242</updated>
+      <workItem from="1527231162456" duration="1558000" />
+      <workItem from="1527232879356" duration="912000" />
+      <workItem from="1527235614028" duration="1794000" />
+      <workItem from="1527237430711" duration="1723000" />
+      <workItem from="1527241928877" duration="66000" />
+      <workItem from="1527242391555" duration="8079000" />
+      <workItem from="1527371044232" duration="14587000" />
+      <workItem from="1527421162861" duration="5579000" />
+      <workItem from="1527428040243" duration="4721000" />
+      <workItem from="1527449188944" duration="5255000" />
+      <workItem from="1527454703420" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="44310000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12708333" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.20520833" side_tool="true" visible="true" weight="0.3209352" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.79479164" weight="0.3209352" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49682203" weight="0.32824427" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7828125" weight="0.3995749" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="98" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="NodeJSConfigurationType">
+        <watch expression="query" />
+        <watch expression="req.body" language="JavaScript" />
+        <watch expression="req.body" />
+        <watch expression="req.body" language="JavaScript" />
+        <watch expression="req.decoded" language="JavaScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>req.decoded</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>req.body</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/countries.xml" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/routes/users.js" />
+    <entry file="file://$PROJECT_DIR$/routes/general.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/jsonwebtoken/sign.js" />
+    <entry file="file://$PROJECT_DIR$/routes/poi.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/countries.xml" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/routes/general.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/jsonwebtoken/sign.js" />
+    <entry file="file://$PROJECT_DIR$/routes/users.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/countries.xml" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/jsonwebtoken/sign.js" />
+    <entry file="file://$PROJECT_DIR$/routes/users.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/tedious/lib/errors.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/jsonwebtoken/sign.js" />
+    <entry file="file://$PROJECT_DIR$/moduels/User.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/User.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/layer.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" />
+    <entry file="file://$PROJECT_DIR$/countries.xml" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_tokens.zip/tokens/server.js" />
+    <entry file="file://$PROJECT_DIR$/routes/general.js" />
+    <entry file="file://$PROJECT_DIR$/‏‏server.js" />
+    <entry file="file://$PROJECT_DIR$/DButils.js" />
+    <entry file="file://$PROJECT_DIR$/routes/users.js" />
+    <entry file="file://$PROJECT_DIR$/routes/poi.js" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

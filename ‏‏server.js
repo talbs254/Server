@@ -8,11 +8,13 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
+var poi = require('./routes/poi');
 var users = require('./routes/users');
 var general = require('./routes/general');
 
-
-app.use('/users', users);
+app.use('/poi',poi);
+app.use('/users',users);
 app.use('/',general);
 
 
