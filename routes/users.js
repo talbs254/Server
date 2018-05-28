@@ -99,33 +99,52 @@ router.post('/RankPOI', function (req, res) {
                     .then(function () {
                         res.json("Thanks for the ranking!");
                     }).catch(function (err) {
-                        res.json(err);
+                    res.json(err);
                 })
             }).catch(function () {
-               res.json("You already rank this POI");
+                res.json("You already rank this POI");
             });
         }
     });
 });
 
-router.post('/ReviewPOI',function(req,res){
+router.post('/ReviewPOI', function (req, res) {
     var userName = req.decoded.userName;
     var pointOfInterest = req.body.pointOfInterest;
     var review = req.body.review;
     var checkPOIExists = `SELECT * FROM [Point Of Interest] WHERE POI_id='${pointOfInterest}';`;
     var date = new Date().toISOString();
     DButilsAzure.execQuery(checkPOIExists).then(function (ret) {
-        if(ret.length>0){
-            var insertUserReviewTable = `INSERT INTO [POI Review] VALUES ('${userName}','${pointOfInterest}','${review}','${date}');`;
-            DButilsAzure.execQuery(insertUserReviewTable).then(function(){
-                res.json("Thanks for the review!")
+        if (ret.length > 0) {
+            var insertUserReviewTable = `INSERT INTO [POI Review] VALUES ('${pointOfInterest}','${userName}','${review}','${date}');`;
+            DButilsAzure.execQuery(insertUserReviewTable).then(function () {
+                var lastReview1;
+                var lastReview2;
+                if (ret[0].LastReview1 == '') {
+                    lastReview1 = review;
+                    lastReview2 = '';
+                }
+                else if (ret[0].LastReview2 == '') {
+                    lastReview1 = ret[0].LastReview1;
+                    lastReview2 = review;
+                }
+                else {
+                    lastReview2 = ret[0].LastReview1;
+                    lastReview1 = review;
+                }
+                var updatePOIReviews = `UPDATE [Point of Interest] SET LastReview1='${lastReview1}',LastReview2='${lastReview2}' WHERE POI_id='${pointOfInterest}';`;
+                DButilsAzure.execQuery(updatePOIReviews).then(function () {
+                    res.json("Thanks for the review!")
+                }).catch(function (err) {
+                    console.log(err);
+                });
+
+
             }).catch(function () {
                 res.json("You already reviewed this POI")
-            })
-
+            });
         }
     });
-
 
 });
 
