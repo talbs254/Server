@@ -8,6 +8,8 @@ var cors = require('cors');
 app.use(cors());
 var jwt = require('jsonwebtoken');
 var DButilsAzure = require('./../DButils');
+var PriorityQueue = require('priorityqueuejs')
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -43,40 +45,64 @@ router.use(function (req, res, next) {
     }
 });
 
+//TODO - FIX
 router.post('/DeletePOI', function (req, res) {
     var pointOfInterest = req.body.pointOfInterest;
     var userName = req.decoded.userName;
     var checkPOIExists = `SELECT * FROM [Point Of Interest] WHERE POI_id='${pointOfInterest}';`;
     DButilsAzure.execQuery(checkPOIExists).then(function (ret) {
         if (ret.length == 1) {
-            var deletePOIFeomUser = `DELETE FROM [User Favorite POI] WHERE Username='${userName}' AND POI_ID ='${pointOfInterest}';`;
-            DButilsAzure.execQuery(deletePOIFeomUser).then(function (ret2) {
+            var deletePOIFromUser = `DELETE [User Favorite POI] OUTPUT DELETED.* FROM [User Favorite POI] WHERE Username='${userName}' AND POI_id ='${pointOfInterest}';`;
+            DButilsAzure.execQuery(deletePOIFromUser).then(function (ret2) {
                 if (ret2.length > 0)
-                    res.json("POI has removed from favorites.");
+                    res.json("POI has removed from favorites successfully.");
                 else
                     res.json("No such POI exists at your favorites.")
             });
+        }
+        else{
+            res.json("No such POI exists.");
         }
     });
 });
 
 
-router.post('/FavoritePOI', function (req, res) {
+router.post('/AddPOI', function (req, res) {
     var pointOfInterest = req.body.pointOfInterest;
     var userName = req.decoded.userName;
     var checkPOIExists = `SELECT * FROM [Point Of Interest] WHERE POI_id='${pointOfInterest}';`;
     DButilsAzure.execQuery(checkPOIExists).then(function (ret) {
         if (ret.length == 1) {
             var addPOIToUser = `INSERT INTO [User Favorite POI] VALUES ('${userName}','${pointOfInterest}',NULL);`
-            DButilsAzure.execQuery(addPOIToUser).then(function () {
-                res.json("POI has been added to favorites.");
-            }).catch(function () {
-                res.json("You already added the POI to your favorites.")
+            DButilsAzure.execQuery(addPOIToUser)
+                .catch(function () {
+                    res.json("You already added the POI to your favorites.")
+                }).then(function () {
+                var getUserFavorites = `SELECT LastFavorite1,LastFavorite2 FROM [User] WHERE Username='${userName}';`;
+                return DButilsAzure.execQuery(getUserFavorites);
+            }).then(function (favorites) {
+                var lastFavorite1;
+                var lastFavorite2;
+                if (favorites[0].LastFavorite1 == null) {
+                    lastFavorite1 = pointOfInterest;
+                }
+                else {
+                    lastFavorite1 = pointOfInterest;
+                    lastFavorite2 = favorites[0].LastFavorite1;
+                }
+                var updatePOIReviews = `UPDATE [User] SET LastFavorite1='${lastFavorite1}',LastFavorite2='${lastFavorite2}' WHERE Username='${userName}';`;
+                DButilsAzure.execQuery(updatePOIReviews).then(function () {
+                    res.json("POI has been added to favorites successfully.");
+                }).catch(function () {
+                    //console.log(err);
+                });
             });
         }
+
         else {
             res.json("No such point of interest exists.")
         }
+
     });
 });
 
@@ -105,8 +131,12 @@ router.post('/RankPOI', function (req, res) {
                 res.json("You already rank this POI");
             });
         }
+        else{
+            res.json("No such POI exists.")
+        }
     });
 });
+
 
 router.post('/ReviewPOI', function (req, res) {
     var userName = req.decoded.userName;
@@ -144,9 +174,70 @@ router.post('/ReviewPOI', function (req, res) {
                 res.json("You already reviewed this POI")
             });
         }
+        else{
+            res.json("No such POI exists.")
+        }
     });
 
+
 });
+
+
+router.post('/POIByOrder', function (req, res) {
+    var userName = req.decoded.userName;
+    var getFavorites = `SELECT POI_id FROM [User Favorite POI] WHERE Username='${userName}';`;
+    DButilsAzure.execQuery(getFavorites).then(function (dbFavorites) {
+        var userFavoriteOrder = JSON.parse(req.body.favorites);
+        var POIs_id = [];
+        for (var i = 0; i < dbFavorites.length; i += 1) {
+            POIs_id.push(dbFavorites[i].POI_id);
+        }
+        for (var i = 0; i < userFavoriteOrder.length; i += 1) {
+            if (POIs_id.includes(userFavoriteOrder[i].POI_id)) {
+                var updateDBPriority = `UPDATE [User Favorite POI] SET PriorityIndex='${userFavoriteOrder[i].priority}' WHERE POI_id='${userFavoriteOrder[i].POI_id}';`;
+                DButilsAzure.execQuery(updateDBPriority);
+            }
+        }
+        res.json("Operation finished successfully.")
+    });
+});
+
+router.get('/PopularPOI', function (req, res) {
+    var userName = req.decoded.userName;
+    var getFavorites = `SELECT * FROM [User Favorite POI] LEFT JOIN [Point Of Interest] ON [User Favorite POI].POI_id=[Point Of Interest].POI_id WHERE Username='${userName}'; `;
+    DButilsAzure.execQuery(getFavorites).then(function (favorites) {
+        if (favorites.length == 0) {
+            res.json("No favorites added.")
+        }
+        else if (favorites.length < 3) {
+            res.json(favorites);
+        }
+        else {
+            var pq = new PriorityQueue(function (a, b) {
+                return a.Rank - b.Rank;
+            });
+            for (var i = 0; i < favorites.length; i += 1)
+                pq.enq(favorites[i]);
+            res.json({
+                PopularPOI1: pq.deq(),
+                PopularPOI2: pq.deq()
+            });
+        }
+    });
+});
+
+
+router.get('/2LastFavorites', function (req, res) {
+    var userName = req.decoded.userName;
+    var twoLastFavoritesAdd = `Select POI_id,Category,Description,Views,Rank,NumberOfRanks,LastReview1,LastReview2 FROM [User] LEFT JOIN [Point Of Interest] ON [User].LastFavorite1=[Point OF Interest].POI_id OR [User].LastFavorite2=[Point OF Interest].POI_id WHERE Username='${userName}';`;
+    DButilsAzure.execQuery(twoLastFavoritesAdd).then(function (lastFavorites) {
+        if (lastFavorites == 0)
+            res.json("No favorites POIs added");
+        else {
+            res.json(lastFavorites);
+        }
+    })
+})
 
 module.exports = router;
 
