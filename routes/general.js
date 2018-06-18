@@ -24,7 +24,7 @@ router.post('/register', function(req,res){
     let verifier1 = req.body.verifier1;
     let verifier2 = req.body.verifier2;
 
-    let categories = req.body.category;
+    let categories = req.body.categories;
 
 
     let checkIfUserAlreadyExists = `SELECT * FROM [User] WHERE Username='${userName}';`;
@@ -33,7 +33,7 @@ router.post('/register', function(req,res){
             res.json("Username is already exists")
         }
         else{
-            let addUser = `INSERT INTO [User] VALUES ('${userName}','${password}','${firstName}','${lastName}','${city}','${country}','${email}','${verifier1}','${verifier2}')`;
+            let addUser = `INSERT INTO [User] VALUES ('${userName}','${password}','${firstName}','${lastName}','${city}','${country}','${email}','${verifier1}','${verifier2}','0','0')`;
             DButilsAzure.execQuery(addUser).then(function(){
                 for(var i=0 ; i<categories.length ;i+=1){
                     let addUserCategory = `INSERT INTO [User Category] VALUES('${userName}','${categories[i]}')`;
@@ -88,7 +88,7 @@ router.post('/retrievePassword', function(req,res){
 
     let query = `SELECT Verifier1,Verifier2,Password FROM [User] WHERE Username='${userName}';`
     DButilsAzure.execQuery(query).then(function(result) {
-        res.send((verifier1 == result[0].Verifier1 &&
+        res.json((verifier1 == result[0].Verifier1 &&
             verifier2 == result[0].Verifier2) ? result[0].Password : "Wrong verifiers.");
     });
 });
