@@ -87,19 +87,6 @@ router.get('/2LastReviews/:id', function (req, res) {
 });
 
 
-router.get('/POI/:id', function (req, res) {
-    let pointOfInterest = req.params.id;
-    var checkPOIExists = `SELECT * FROM [Point Of Interest] WHERE POI_id='${pointOfInterest}';`;
-    DButilsAzure.execQuery(checkPOIExists).then(function (ret) {
-        if (ret.length == 1) {
-            var updatePOIViews = `UPDATE [Point of Interest] SET Views='${ret[0].Views +1}';`;
-            DButilsAzure.execQuery(updatePOIViews)
-            res.json(ret)
-        }
-        else res.json("There is no such a POI")
-    });
-});
-
 router.get('/Categories', function (req, res) {
     var getAllCategories = `SELECT Category FROM [Category];`;
     DButilsAzure.execQuery(getAllCategories).then(function (ret) {
@@ -112,5 +99,18 @@ router.get('/Categories', function (req, res) {
     });
 });
 
+
+router.get('/:id', function (req, res) {
+    let pointOfInterest = req.params.id;
+    var checkPOIExists = `SELECT * FROM [Point Of Interest] WHERE POI_id='${pointOfInterest}';`;
+    DButilsAzure.execQuery(checkPOIExists).then(function (ret) {
+        if (ret.length == 1) {
+            var updatePOIViews = `UPDATE [Point of Interest] SET Views='${ret[0].Views +1}' WHERE POI_id='${pointOfInterest}';`;
+            DButilsAzure.execQuery(updatePOIViews)
+            res.json(ret)
+        }
+        else res.json("There is no such a POI")
+    });
+});
 
 module.exports = router;
